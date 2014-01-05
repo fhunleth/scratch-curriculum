@@ -1,0 +1,432 @@
+* {
+    margin: 0px padding: 0px;
+    font: Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSansRegular.eot');
+  src: url('../fonts/PTSansRegular.eot?#iefix') format('abedded-opentype'),
+       url('../fonts/PTSansRegular.woff') format('woff'),
+       url('../fonts/PTSansRegular.ttf') format('truetype'),
+       url('../fonts/PTSansRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSansItalic.eot');
+  src: url('../fonts/PTSansItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/PTSansItalic.woff') format('woff'),
+       url('../fonts/PTSansItalic.ttf') format('truetype'),
+       url('../fonts/PTSansItalic.svg') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSansBold.eot');
+  src: url('../fonts/PTSansBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/PTSansBold.woff') format('woff'),
+       url('../fonts/PTSansBold.ttf') format('truetype'),
+       url('../fonts/PTSansBold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSansBoldItalic.eot');
+  src: url('../fonts/PTSansBoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/PTSansBoldItalic.woff') format('woff'),
+       url('../fonts/PTSansBoldItalic.ttf') format('truetype'),
+       url('../fonts/PTSansBoldItalic.svg') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+html {
+    font-family: PTSans, Arial, sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    text-align: center;
+    background: #FFF;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 22px;
+    border-radius: 4px 4px 4px 4px;
+}
+h3 {
+	font-size:20px;
+}
+p {
+    font-size: 16px;
+}
+#cclesson {
+    width: 800px;
+    margin: 15px auto;
+    background: #FFF;
+    text-align: left;
+    padding: 20px;
+}
+section {
+    width:700px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    clear:both;
+}
+header {
+    background-color: #ADCAEA;
+    border-radius: 5px;
+    color: #FFFFFF;
+    width:100%;
+    height:100px;
+    background-image: url("../img/logo.png");
+    background-image: url("../img/logo.svg");
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:contain;
+    padding:10px;
+}
+header h1 {
+    float:right;
+    width:660px;
+    margin-top:20px;
+    text-indent:20px;    
+    line-height:60px;
+    font-size:30px;
+}
+header h2 {
+    background:#007CC9;
+    font-size: 30px;
+    height: 100px;
+    line-height: 100px;
+    margin-top: -20px;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+.intro h1, .intro h2 {
+    font-size: 22px;
+    margin-top:40px;
+}
+
+.intro p {
+    font-size: 16px;
+}
+.intro img {
+    border: 5px solid rgb(230,134,45);
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.intro ul {
+    background-color: rgb(220,220,220);
+    border-radius: 10px;
+    list-style: none;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.intro li.activity {
+    background-image: url(../img/check.svg);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+.intro li.test {
+    background-image: url(../img/flag.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-indent: 50px;
+}
+
+.intro li.save {
+    background-image: url(../img/save.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-indent: 50px;
+}
+.intro li.activity strong {
+    color: rgb(230,134,45);
+    text-transform: capitalize;
+}
+.intro li.save strong {
+    color: rgb(36,90,154);
+    text-transform: capitalize;        
+}
+.intro li.test strong {
+    color: rgb(54,161,55);
+    text-transform: capitalize;        
+}
+.activity header div{
+    color: #FFF;
+    font-size: 25px;
+    background-color: rgb(51,150,55);
+    text-align: center;
+    width: 60px;
+    padding: 5px;
+    border-radius: 10px;
+    float: left;
+    margin-left: 30px;
+    margin-top: -20px;
+    margin-right: 15px;
+}
+.activity header h1 {
+    background: #ABDBEA;
+    padding: 8px;
+    text-align: left;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 20px;
+    color: #000;        
+}
+.activity h1 {
+    font-size: 30px;
+    color: #FFF;
+    margin-top: 30px;
+    padding: 10px 10px;
+    background-color: rgb(51,150,55);
+    border-radius: 5px;
+}
+.activity h1 strong{
+    color: #ABDBEA;
+}
+.check h2{
+    color: rgb(230,134,45);
+    background-image: url(../img/check.svg);
+    line-height:40px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+.flag h2 {
+    color: rgb(54,161,55);
+    background-image: url(../img/flag.svg);
+    background-position: 0px 10px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    text-indent: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-top: 3px dotted rgb(230,134,45);
+}
+.save h2 {
+    color: rgb(36,90,154);
+    background-image: url(../img/save.svg);
+    background-position: 0px 10px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    text-indent: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-top: 3px solid rgb(36,90,154);        
+}
+.try {
+    background: #ABDBEA;
+    border-radius: 10px;
+    width: 620px;
+    list-style: none;
+    padding:20px;
+    margin: 0 auto;
+    margin-top:20px;
+    overflow:auto;
+}
+.try h2 {
+    margin-top:0;
+}
+.try code {
+	background:#fff;
+}
+.activity .try li:before {
+    border-color:#00b1da;
+    background:#fff;
+}
+.challenge {
+    border: 3px solid #00b1da;
+    border-radius:12px;
+    width:654px;
+    padding-bottom:20px;
+    overflow:auto;
+}
+.challenge h2 {
+    color:#fff;
+    background: #00b1da;
+    text-indent:20px;
+    border-radius: 0;
+    margin-top:0;
+    line-height:45px;
+}
+.challenge p {
+    padding:0 20px;
+}
+.activity p {        
+    clear:both;
+}
+.activity ul p {
+    clear:none;
+    margin-top:0;
+    padding-top:0;
+}
+.activity img {
+    float: right;
+    margin-right: 100px;
+    margin-left: 500px;
+    padding: 5px;
+    border: 5px solid rgb(230,134,45);
+}
+.activity li {
+    font-size: 16px;        
+    line-height:24px;
+    width:100%;
+    /*list-style-type: none;*/
+}
+.check li, .challenge li, .try li {
+    float:left;
+    list-style-position: outside;
+}
+.check li:before, .try li:before, .challenge li:before {
+    content: " ";
+    border-radius: 8px;
+    border: 3px solid #ABDBEA;
+    padding: 10px 12px;
+    margin-right:20px;
+    float:left;
+}
+.check li p {
+    margin:0;
+    clear:none;
+}
+.check li {
+    margin-left:25px;
+    width:90%;
+}
+.check ul, .try ul, .challenge ul {
+    list-style-type:none;
+    line-height:24px;
+}
+.try ul {
+    margin-left:0;
+    padding-left:0;
+}
+.challenge ul {
+    padding-left:20px;
+}
+.check li:before {
+    margin-left:-60px;
+}
+.protip {
+    border: 3px solid #ff7f00;
+    background: #fff99d;
+    border-radius:12px;
+    width:614px;
+    overflow:auto;
+    padding:0 20px 20px 20px;
+}
+.protip li:before {
+    content:none;
+    margin:0;
+}
+.check .protip li{
+    margin-left:0;
+    width:100%;
+}
+.check .protip ul {
+    padding-left:0;
+}
+pre {
+    font-family: "Source Code Pro",Courier,monospace;
+    font-weight: 400;
+    line-height: 1.5;
+    text-indent: 0;
+    clear:both;
+    background:#eee;
+    padding: 20px;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+
+}
+code {
+    border-radius: 4px 4px 4px 4px;
+    background: #CCCCCC;
+    background:#B9E5FA;
+    padding:2px 5px;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+    white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+}
+pre code {
+    background:transparent;
+    font-size:16px;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+}
+.legal {
+    clear:both;
+    font-size:8px;
+ }
+ /* things to be cleared */
+ .challenge ul:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+ }
+ /* print styles */
+ .activity {
+    page-break-inside:avoid;
+ }
+.try, .challenge, .protip {
+    page-break-inside:avoid;
+}
+h1, h2, .check, .try, .challenge {
+    page-break-before: auto;
+}
+.challenge, .try, .check, .protip {
+    page-break-after:auto;
+}
+.check, ul, ol, pre, p {
+    page-break-inside:avoid;
+}
+h1, h2, h3 {
+    page-break-after:avoid;
+}
+
