@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Code Club - ">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+    <link rel="stylesheet" href="http://files.troodon-software.com/coderdojodc/codeclub/scratchblocks2/scratchblocks2.css">
+    <script src="http://files.troodon-software.com/coderdojodc/codeclub/scratchblocks2/scratchblocks2.js"></script>
+  <title>Code Club -  </title>
+  <link rel="stylesheet" href="http://files.troodon-software.com/coderdojodc/codeclub/css/codeclub.css">
+  
+  
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div id="cclesson">
+<p>Level 2</p>
+<section id="fish-chomp" class="level1">
+<h1>Fish Chomp</h1>
+<p><strong>Introduction:</strong><br />We’re going to make a Fish Chomp game! Guide the large Hungry Fish and try to eat all the prey that are swimming around.</p>
+<section id="step-1-create-a-sprite-that-follows-the-mouse" class="level2">
+<h2>STEP 1: Create a sprite that follows the mouse</h2>
+<p><strong>Let’s make the Hungry Fish swim around the sea!</strong></p>
+<ol>
+<li>Start a new Scratch project.<br /></li>
+<li>Select the Stage, then select the Stage’s Background tab. Import the<br />background nature/underwater and remove background1.<br /></li>
+<li>Change the name of Sprite 1 to Hungry Fish.<br /></li>
+<li>Import Hungry Fish’s costume, resources/hungry-fish then remove its existing costume1 and costume2.<br />5 Use the button above the Costumes tab to make sure the sprite can only flip left-right.<br /></li>
+<li>Now create a script for Hungry Fish to follow the mouse around the sea like this:</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        point towards mouse-pointer
+        move 3 steps
+    (end forever)</code></pre>
+<section id="test-your-project" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Click the green flag.</strong><br />Move the mouse pointer around the sea. Does the fish follow the pointer?<br />What happens if you don’t move the mouse pointer and the fish catches up with it? What does it look like? Why does it do this?</p>
+<ol>
+<li>You can stop the Hungry Fish flipping like crazy if you make it only move when it’s not too near the mouse pointer<br />(The <em>distance to</em> block is in the<br />Sensing palette).</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever if distance to mouse-pointer &gt; 10
+        point towards mouse-pointer
+        move 3 steps
+    (end forever)</code></pre>
+</section>
+<section id="test-your-project-1" class="level3">
+<h3>Test Your Project</h3>
+<p>Save your project</p>
+</section>
+</section>
+<section id="things-to-try" class="level2">
+<h2>Things to try</h2>
+<p>If you want, you can put different numbers in the script. How does that change how Hungry Fish moves? Change the distance threshold to a large number (e.g. 100), or a small number (e.g. 1). Change the amount the fish moves to a large number (e.g. 20) or a small number (e.g. 1 or even 0).</p>
+</section>
+<section id="step-2-add-some-prey" class="level2">
+<h2>STEP 2: Add some prey</h2>
+<ol>
+<li>Create a new sprite from the file animals/lobster1.<br /></li>
+<li>Use the Shrink sprite tool (above the Stage)<br />to make the sprite smaller.<br /></li>
+<li>Create a script to make the prey swim around. We want them to move randomly, so let’s make it move forward a bit, then turn a random amount left or right, then do it again.</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        move 2 steps
+        turn pick random -20 to 20 degrees
+        if on edge, bounce
+    (end forever)</code></pre>
+<section id="test-your-project-2" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Click the green flag</strong> and watch the prey swim around. Does it swim like you expect? Does it swim realistically?</p>
+<p><strong>At the moment, the Hungry Fish and the prey don’t interact with each other. We’ll sort that out in the next step.</strong></p>
+<p>Save your project</p>
+</section>
+<section id="things-to-try-1" class="level3">
+<h3>Things to try</h3>
+<ul>
+<li>Try changing the numbers in the pick random and move blocks. How do they make the prey move differently?<br /></li>
+<li>What does the <strong>if on edge, bounce</strong> block do? Take it out and see what happens.</li>
+</ul>
+</section>
+</section>
+<section id="step-3-hungry-fish-eats-the-prey" class="level2">
+<h2>STEP 3: Hungry Fish eats the prey</h2>
+<p><strong>Now we want to make the Hungry Fish eat the prey!</strong> Once the Hungry Fish has caught the prey in its mouth, two things need to happen:</p>
+<ul>
+<li>The Hungry Fish needs to close its mouth and make a &quot;chomp&quot; sound.<br /></li>
+<li>The prey needs to disappear, then reappear a short while later.</li>
+</ul>
+<ol>
+<li>First, let’s make the prey disappear if it is touching the Hungry Fish, and then reappear 3 seconds later. Use the touching block to see if it is touching the fish.</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        move 2 steps
+        turn pick random -20 to 20 degrees
+        if on edge, bounce
+        if touching Hungry Fish?
+            hide
+            wait 3 secs
+            show
+        (end if)
+    (end forever)</code></pre>
+<section id="test-your-project-3" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Try out your game again – can you spot any problems?</strong> Notice that the prey disappears no matter where it touches the Hungry Fish. Also, the fish could just wait 3 seconds and eat the prey the moment it reappears – this isn’t very fair!</p>
+<ol>
+<li>How could we make sure the prey only disappears if it is touching the Hungry Fish’s mouth? Well, we could use the touching color block, and see if it is touching the fish’s blue teeth. To do this, replace the touching block with a<br />touching color block in your script, click on the color in the block and then click again on the fish’s teeth.<br /></li>
+<li>Next we can make the prey move to a random point on the screen before reappearing using a go to block, and giving it a random value for x and y.</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        move 2 steps
+        turn pick random -20 to 20 degrees
+        if on edge, bounce
+        if touching colour []?
+            hide
+            wait 3 secs
+            go to x:random -220 to 220 y: pick random -170 to 170
+            show
+        (end if)
+    (end forever)</code></pre>
+</section>
+<section id="test-your-project-4" class="level3">
+<h3>Test your project</h3>
+<p>Try the game again – does the prey only vanish when it touches the fish’s mouth? And does it re-appear in a random point on the screen instead of where it was eaten?</p>
+<ol>
+<li>The fish needs to know when it has eaten something so it can play a sound and change its skin. To do this, we can have the prey broadcast the fact that it’s been eaten before vanishing.</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        move 2 steps
+        turn pick random -20 to 20 degrees
+        if on edge, bounce
+        if touching colour []?
+            broadcast got me
+            hide
+            wait 3 secs
+            go to x:random -220 to 220 y: pick random -170 to 170
+            show
+        (end if)
+    (end forever)</code></pre>
+<p><strong>Now we want the fish to respond to this message by making a “chomp” sound and snapping its jaws.</strong></p>
+<ol>
+<li>Add the resources/mouth-closed costume and the resources/chomp sound to the Hungry Fish sprite.<br /></li>
+<li>Then, add a new script to the Hungry Fish to respond to the message broadcast by the prey. This script should make the fish play the 'chomp' sound and switch to the mouth-closed costume, wait briefly and then switch back.</li>
+</ol>
+<pre class="scratch"><code>
+    when I receive got me
+    play sound chomp
+    repeat 2
+        switch to costume mouth-closed
+        wait 0.5 secs
+        switch to costume hungry-fish
+    (end repeat)</code></pre>
+<p><strong>Now our Hungry Fish is ready to eat, let’s fill the ocean with prey. Right-click on the prey sprite and click “duplicate” several times.</strong></p>
+</section>
+<section id="test-your-project-5" class="level3">
+<h3>Test Your Project</h3>
+<p>Click the green flag.<br />Does the Hungry Fish eat the prey? Does it eat each of the different prey?</p>
+<p>Save your project</p>
+</section>
+<section id="things-to-think-about" class="level3">
+<h3>Things to think about</h3>
+<p>Why do we need to add a show block to the start of the prey’s script? Think about what would happen if the prey is eaten, then the game is stopped before it reappears. What would happen if the game was restarted then?</p>
+<p><strong>Well done you’ve finished the basic game. There are more things you can do to your game though. Are you ready for a challenge?</strong></p>
+</section>
+</section>
+<section id="challenge-1-make-the-prey-move-differently" class="level2">
+<h2>Challenge 1: Make the prey move differently</h2>
+<p>At the moment, all the prey move in the same way. <strong>Can you make one of them<br />move differently?</strong><br /><strong>Hint:</strong> Don’t spend too long on this bit without looking at the other activities in this<br />project.</p>
+<p><strong>Pick one of the prey to experiment on.</strong> If they have the same costumes, make it a different colour with the <strong>set color effect block</strong>. That way, you can tell it apart from the rest of the prey.</p>
+<p>Make this prey move slower than the others. <strong>Hint:</strong> Look at the move (2) steps block.</p>
+<section id="test-your-project-6" class="level3">
+<h3>Test Your Project</h3>
+<p>Does the prey move slower? Does this make the game better?<br />If you can do that, <strong>try making one of the prey move quicker than the others.</strong></p>
+<p>Does the prey still move in a sensible way? Do these changes make the game better?<br /><strong>Hint:</strong> If your prey swims around in circles, check the values of the pick random block in the turn block.</p>
+<p>How about you make each of the prey behave differently, using different combinations of these changes?</p>
+<p>Do any of these changes make the game better? Do they make the game more interesting, more fun, harder, or easier? Are any of those “better”?</p>
+<p>Save your project</p>
+</section>
+</section>
+<section id="challenge-2-make-the-prey-avoid-the-hungry-fish" class="level2">
+<h2>Challenge 2: Make the prey avoid the Hungry Fish</h2>
+<p>The prey in this game are really stupid! They just swim around randomly until they’re eaten. Real prey swim away from predators. <strong>Let’s make one of the prey swim away from the Hungry Fish.</strong></p>
+<p>There’s no block in Scratch that tells you the direction that another sprite is in. But you can make one sprite point towards another, then make it turn around to face away. The blocks you need are in the <strong>Motion</strong> palette.</p>
+<p>Using that idea, <strong>make one of the prey always point away from the Hungry Fish.</strong> You might want to make it wiggle as it swims away.</p>
+<section id="test-your-project-7" class="level3">
+<h3>Test Your Project</h3>
+<p>Does this make the prey harder to catch? Does it make the game better?</p>
+<p>Save your project</p>
+</section>
+</section>
+<section id="challenge-3-add-a-score" class="level2">
+<h2>Challenge 3: Add a score</h2>
+<p>It’s not enough just to eat lobsters. How do you know you’re better at the game than your friends? <strong>You need a way to keep score so lets add a score board.</strong> Look at the <strong>Keep Score scratch card</strong> for an idea of how to do it.</p>
+<p>Where should you put the block that changes the score?</p>
+<p>Make sure the score goes back to zero at the start of the game. Where should you put that block?</p>
+<section id="test-your-project-8" class="level3">
+<h3>Test Your Project</h3>
+<p>Does the score go to zero at the start of the game? Does it go up every time you eat prey?</p>
+<p>Save your project</p>
+</section>
+</section>
+<section id="challenge-4-add-a-countdown" class="level2">
+<h2>Challenge 4: Add a countdown</h2>
+<p><strong>Give yourself a time limit in the game.</strong> How many prey can you eat in thirty<br />seconds?</p>
+<p>Look at the <strong>Timer scratch card</strong> for how to add a timer to the game. Start with the game lasting thirty seconds.</p>
+<section id="test-your-project-9" class="level3">
+<h3>Test Your Project</h3>
+<p>Does the timer start at 30?</p>
+<p>Does it go down at the right speed?</p>
+<p>Can you catch prey while the timer is going?</p>
+<p>Does the game stop when the timer reaches zero?</p>
+<p>Save your project</p>
+</section>
+</section>
+<section id="challenge-5-add-a-bonus-score" class="level2">
+<h2>Challenge 5: Add a bonus score</h2>
+<p>Award a large bonus score if you can eat all three lobsters at the same time. How can<br />you tell how many prey have been eaten?<br /><strong>Hint:</strong> One way to do this <strong>uses a variable to count how many prey are swimming around.</strong></p>
+<p>Save your project</p>
+</section>
+<section id="challenge-6-change-the-game-keep-a-prey-alive" class="level2">
+<h2>Challenge 6: Change the game: keep a prey alive!</h2>
+<p>Sometimes, you can have great new ideas by taking an existing idea and doing the opposite.</p>
+<p><strong>Modify the game so that, instead of you controlling a fish that tries to eat the others, you control one prey in a sea with lots of Hungry Fish.</strong> How long can you last before you’re eaten?</p>
+<p>Save your project</p>
+<p><strong>Well done you’ve finished, now you can enjoy the game!</strong><br />Don’t forget you can share your game with all your friends and family by clicking on <strong>Share</strong> on the menu bar!</p>
+</section>
+</section>
+</body>
+</div>
+<script>
+scratchblocks2.parse("pre.blocks");
+</script>
+</html>

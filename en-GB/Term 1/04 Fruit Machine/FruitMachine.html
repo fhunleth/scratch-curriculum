@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Code Club - ">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+    <link rel="stylesheet" href="http://files.troodon-software.com/coderdojodc/codeclub/scratchblocks2/scratchblocks2.css">
+    <script src="http://files.troodon-software.com/coderdojodc/codeclub/scratchblocks2/scratchblocks2.js"></script>
+  <title>Code Club -  </title>
+  <link rel="stylesheet" href="http://files.troodon-software.com/coderdojodc/codeclub/css/codeclub.css">
+  
+  
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div id="cclesson">
+<p>Level 2</p>
+<section id="fruit-machine" class="level1">
+<h1>Fruit machine</h1>
+<p><strong>Introduction:</strong><br />This is a game that has three sprites that change costume. You have to stop them when they’re showing the same picture (like a fruit machine!).</p>
+<section id="step-1-create-a-sprite-that-changes-costumes" class="level2">
+<h2>STEP 1: Create a sprite that changes costumes</h2>
+<p><strong>Let’s import the different pictures for the game</strong></p>
+<ol>
+<li>Start a new scratch project. Delete the cat by right clicking it and clicking Delete<br /></li>
+<li>Import a new sprite.<br /></li>
+<li>Choose an image from any folder. We used things/bananas1, but you can<br />use any image you want to.<br /></li>
+<li>Click the Costumes tab and import two more things so there are three in total<br />(we used animals/bee1 and things/lego, but you can use any images).</li>
+</ol>
+<p><strong>Now we’ve got some costumes, we want the sprite to change between them.</strong></p>
+</section>
+<section id="step-2-making-the-picture-change" class="level2">
+<h2>STEP 2: Making the picture change</h2>
+<ol>
+<li>Click the Scripts tab.<br /></li>
+<li>Click Control and drag a when flag clicked into the scripts area. This will be<br />triggered when we click the green flag.<br /></li>
+<li>Add a forever and attach it so it snaps to the bottom.<br /></li>
+<li>Click the green flag in the top right. Notice that a white outline is around our script. It’s running because we clicked the green flag, which triggers this.<br /></li>
+<li>Now click Looks and drag in a next costume<br /></li>
+<li>How do we slow it down so it isn’t changing so quickly? Click Control and drag in a wait 1 secs<br /></li>
+<li>Adjust the time until it’s repeating at a faster pace (a time of 0.1s looks good). What would happen if we didn’t have the wait block?</li>
+</ol>
+<pre class="scratch"><code>
+    when FLAG clicked
+    forever     
+        next costume
+        wait 0.1 secs
+    (end forever)</code></pre>
+<section id="test-your-project" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Click the green flag.</strong><br />Do the costumes change at a sensible rate?</p>
+<p>Save your project</p>
+</section>
+<section id="things-to-try" class="level3">
+<h3>Things to try</h3>
+<p>Adjust the time in the wait block.What numbers do you think would make the game too easy, or too hard?</p>
+</section>
+</section>
+<section id="step-3-making-it-stop-when-we-click-on-it" class="level2">
+<h2>STEP 3: Making it stop when we click on it</h2>
+<p>Great! We can make the sprite change costumes forever, but how do we make it stop when we click on it?</p>
+<ol>
+<li>Create a new variable by clicking Variables and Make a variable. Call it stopped and make it for only this sprite, then uncheck the box next to it so it doesn’t display on the stage.<br /></li>
+<li>Set stopped to 1 when someone clicks on the image using<br />when sprite1clicked and set stopped to 0 making sure to change the value from 0 to 1.<br /></li>
+<li>Now we need to make the image stop changing when the variable stopped equals 1. Click Control and change the forever loop to a forever if and use a new equals operator to check if stopped equals 0<br /></li>
+<li>Finally, add a set sprite1stopped to 0 underneath the when flag clicked</li>
+</ol>
+<section id="test-your-project-1" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Click the green flag, wait for a moment, then click on the sprite.</strong></p>
+<p>Does it change costume before you click on it?<br />Does it stop when you do click on it?<br /><strong>Start the sprite again.</strong> Does it stop when you put the mouse pointer on it, without clicking? Does the sprite stop when you click somewhere else on the Stage? Somewhere else in the Scratch window? Somewhere outside the Scratch window?</p>
+<p>Save your project</p>
+</section>
+</section>
+<section id="step-4-creating-the-other-sprite" class="level2">
+<h2>Step 4: Creating the other sprite</h2>
+<p><strong>Now we need to make the other sprites so we can play our game!</strong></p>
+<ol>
+<li>Duplicate the sprite (Sprite1) by right clicking on it in the bottom right corner.<br /></li>
+<li>Duplicate it again so there are 3 sprites on the screen.<br /></li>
+<li>Move each sprite so they are in a line. Make them a bit smaller with if you need to.</li>
+</ol>
+<section id="test-your-project-2" class="level3">
+<h3>Test Your Project</h3>
+<p><strong>Click the green flag.</strong> All the sprites should change. Try to stop them all on the same picture!</p>
+<p>Save your project</p>
+</section>
+<section id="things-to-try-1" class="level3">
+<h3>Things to try</h3>
+<p>When you start the game just after you’ve loaded it, all the sprites show the same costume and change in unison. How about you make the sprites change to a random costume when the green flag is clicked?<br />Hint: try picking a random costume for each sprite when the game is started.</p>
+<p><strong>Well done you’ve finished the basic game. There are more things you can do to your game though. Have a go at these challenges!</strong></p>
+</section>
+</section>
+<section id="challenge-1-make-the-game-harder" class="level2">
+<h2>Challenge 1: Make the game harder</h2>
+<p>Change the difficulty of the game somehow. Just making the costumes change quicker is easy. Try and do something more imaginative. Some ideas you might like to try:</p>
+<ol>
+<li>Change the number of costumes each sprite has.<br /></li>
+<li>Make some sprites have unique costumes.<br /></li>
+<li>Have different times between costume changes.<br /></li>
+<li>Have each sprite move to a random costume rather than the next one.</li>
+</ol>
+<p><strong>Have fun coming up with your own things!</strong></p>
+<p>Every time you make a change, think about whether it make the game easier or harder. Is the game too easy or too hard? How can you adjust the difficulty so it’s just right?</p>
+</section>
+<section id="challenge-2-make-the-game-get-harder-and-easier-over-time" class="level2">
+<h2>Challenge 2: Make the game get harder and easier over time</h2>
+<p>Different people will have different skills at playing the game. <strong>How could you make the game adjust its difficulty depending on the player?</strong></p>
+<p>One way you could do it is to <strong>adjust the speed the costumes change at</strong>. You can use a variable, called <strong>delay</strong>, to give the duration of each sprite’s wait block. If the player wins the round, the delay can be reduced a little (to make the game harder). If the player loses the round, the delay can be increased a little (to make the game easier).</p>
+</section>
+<section id="challenge-3-detect-when-all-the-sprites-have-stopped-on-the-same-costume" class="level2">
+<h2>Challenge 3: Detect when all the sprites have stopped on the same costume</h2>
+<p><strong>The aim of the game is click on the sprites so they’re stopped while showing the same costume. It would be nice if the stage detected when you’d finished playing and then told you if you had won or lost by checking to see if each sprite had the same costume.</strong></p>
+<p>First, the stage needs to know when the player has finished. We can do this by having the stage check to see if all sprites have stopped moving when we click on one of them. Go back and modify each of the sprite# clicked blocks to broadcast a new message, checkForEnd</p>
+<p>The Stage can respond to this message and check if the game is over by seeing if all three sprites’ stopped variables are set to 1, by using the x position of Sprite block for each sprite, and changing “x position” to stopped If all three sprites have a stopped value of 1, we know the game is over and we can check to see if the player has won.</p>
+<p>To do this, we can use the same x position of Sprite block, but instead of looking at the stopped variable, we can look at the costume # and see if Sprite1 has the same costume as Sprite2, and if Sprite2 has the same costume as Sprite3.</p>
+<p>To do this, you’ll need an if block to check each stopped variable, and inside that an if... else block to see if the player has won or lost by comparing each<br />costume #.</p>
+<p>From this point on, you could announce the result of the game using a broadcast and respond to this with another sprite. Maybe get Felix back to congratulate or commiserate the player?</p>
+<p><strong>Well done you’ve finished, now you can enjoy the game!</strong><br />Don’t forget you can share your game with all your friends and family by clicking on <strong>Share</strong> on the menu bar!</p>
+</section>
+</section>
+</body>
+</div>
+<script>
+scratchblocks2.parse("pre.blocks");
+</script>
+</html>
